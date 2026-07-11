@@ -79,7 +79,7 @@ export default function HomePage() {
               {
                 icon: PencilLine,
                 title: "Share your photo",
-                body: "Fill out a short request with a clear photo of your pet and the size you'd like. I'll confirm the details with you.",
+                body: "Fill out a short request with a clear photo of your pet. I'll confirm the details with you.",
               },
               {
                 icon: Heart,
@@ -128,7 +128,7 @@ export default function HomePage() {
             </Link>
           </Reveal>
 
-          <div className="grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-4 lg:gap-6">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-7 sm:gap-y-10 lg:grid-cols-4 lg:gap-x-8 lg:gap-y-12">
             {featuredPortraits.slice(0, 4).map((portrait) => (
               <Reveal key={portrait.id}>
                 <PortraitCard portrait={portrait} />

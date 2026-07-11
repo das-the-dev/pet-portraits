@@ -14,9 +14,7 @@ export type SizeOption = {
 
 // Base price for a single-pet portrait at each size.
 export const sizeOptions: SizeOption[] = [
-  { id: "small", label: "Small", dimensions: '8" × 10"', price: 150 },
-  { id: "medium", label: "Medium", dimensions: '11" × 14"', price: 250 },
-  { id: "large", label: "Large", dimensions: '16" × 20"', price: 350 },
+  { id: "small", label: '8" × 10"', dimensions: '8" × 10"', price: 150 },
 ];
 
 // The most pets you'll draw together in one portrait.

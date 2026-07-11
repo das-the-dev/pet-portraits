@@ -4,18 +4,23 @@ import type { Portrait } from "@/lib/portfolio";
 export function FramedPortrait({
   portrait,
   priority = false,
+  sizes = "(max-width: 768px) 80vw, 40vw",
+  className = "mx-auto w-full max-w-[17rem] sm:max-w-xs md:max-w-none",
 }: {
   portrait: Portrait;
   priority?: boolean;
+  sizes?: string;
+  className?: string;
 }) {
   return (
-    <figure className="mx-auto w-full max-w-[17rem] sm:max-w-xs md:max-w-none">
+    <div className={className}>
       {/* Wall shadow */}
       <div className="relative shadow-[0_28px_60px_-18px_rgba(58,51,49,0.55),0_12px_24px_-12px_rgba(58,51,49,0.35)]">
-        {/* Outer wood frame — beveled edges via layered gradients + inset shadows */}
+        {/* Outer wood frame — % padding so proportions match at every size */}
         <div
-          className="relative rounded-[2px] p-[5px] sm:p-[6px]"
+          className="relative rounded-[2px]"
           style={{
+            padding: "1.35%",
             background: `
               linear-gradient(
                 145deg,
@@ -37,8 +42,9 @@ export function FramedPortrait({
         >
           {/* Inner rabbet — the dark groove where the mat sits */}
           <div
-            className="rounded-[1px] p-[3px] sm:p-[3px]"
+            className="rounded-[1px]"
             style={{
+              padding: "0.7%",
               background: "linear-gradient(180deg, #2a1f17 0%, #1a120c 100%)",
               boxShadow: `
                 inset 0 1px 4px rgba(0,0,0,0.6),
@@ -46,10 +52,11 @@ export function FramedPortrait({
               `,
             }}
           >
-            {/* Mat board */}
+            {/* Mat board — scales with frame so grid + lightbox match */}
             <div
-              className="relative p-[10px] sm:p-[12px]"
+              className="relative"
               style={{
+                padding: "2.75%",
                 background: `
                   linear-gradient(
                     180deg,
@@ -76,7 +83,7 @@ export function FramedPortrait({
                         src={portrait.image}
                         alt={`Hand-drawn portrait of ${portrait.name}`}
                         fill
-                        sizes="(max-width: 768px) 80vw, 40vw"
+                        sizes={sizes}
                         className="object-cover"
                         style={{
                           objectPosition: portrait.position ?? "50% 50%",
@@ -103,6 +110,6 @@ export function FramedPortrait({
           </div>
         </div>
       </div>
-    </figure>
+    </div>
   );
 }

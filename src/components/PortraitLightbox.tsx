@@ -1,9 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import Image from "next/image";
 import { X } from "lucide-react";
 import type { Portrait } from "@/lib/portfolio";
+import { FramedPortrait } from "@/components/FramedPortrait";
 
 export function PortraitLightbox({
   portrait,
@@ -31,8 +31,8 @@ export function PortraitLightbox({
     <div
       role="dialog"
       aria-modal="true"
-      aria-label={`Full view of ${portrait.name}`}
-      className="fixed inset-0 z-50 flex items-end justify-center bg-ink/85 p-4 backdrop-blur-sm sm:items-center sm:p-8"
+      aria-label={`Larger view of ${portrait.name}`}
+      className="fixed inset-0 z-50 flex items-center justify-center bg-ink/80 px-5 py-12 backdrop-blur-sm sm:px-10 sm:py-16"
       onClick={onClose}
     >
       <button
@@ -45,28 +45,18 @@ export function PortraitLightbox({
       </button>
 
       <figure
-        className="flex w-full max-w-3xl flex-col items-center gap-4 sm:gap-5"
+        className="flex w-full max-w-[min(28rem,calc((100dvh-12rem)*0.8))] flex-col items-center sm:max-w-[min(32rem,calc((100dvh-13rem)*0.8))]"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="relative h-[min(72vh,780px)] w-full overflow-hidden rounded-sm bg-[#0c0a09] shadow-[0_24px_80px_-20px_rgba(0,0,0,0.65)]">
-          {portrait.image ? (
-            <Image
-              src={portrait.image}
-              alt={`Hand-drawn portrait of ${portrait.name}`}
-              fill
-              sizes="(max-width: 768px) 100vw, 720px"
-              className="object-contain"
-              priority
-            />
-          ) : null}
-        </div>
-
-        <figcaption className="text-center">
+        <FramedPortrait
+          portrait={portrait}
+          className="w-full"
+          sizes="(max-width: 768px) 90vw, 560px"
+          priority
+        />
+        <figcaption className="mt-6 shrink-0 text-center sm:mt-8">
           <p className="font-display text-2xl font-semibold tracking-tight text-cream sm:text-3xl">
             {portrait.name}
-          </p>
-          <p className="mt-1 text-xs uppercase tracking-[0.18em] text-cream/65">
-            {portrait.subtitle}
           </p>
         </figcaption>
       </figure>

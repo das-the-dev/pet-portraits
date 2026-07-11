@@ -15,7 +15,7 @@ const CLOUDINARY_CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
 export function CommissionForm() {
-  const [sizeId, setSizeId] = useState(sizeOptions[1].id);
+  const sizeId = sizeOptions[0].id;
   const [petCount, setPetCount] = useState(1);
   const [memorial, setMemorial] = useState(false);
   const [notes, setNotes] = useState("");
@@ -105,35 +105,17 @@ export function CommissionForm() {
       className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:gap-14 xl:gap-16"
     >
       <div className="space-y-8 sm:space-y-9">
-        <Fieldset legend="Choose a size">
-          <div className="grid gap-3 sm:grid-cols-3">
-            {sizeOptions.map((s) => (
-              <label
-                key={s.id}
-                className={`cursor-pointer rounded-xl border p-4 transition-colors ${
-                  sizeId === s.id
-                    ? "border-terracotta bg-terracotta/5"
-                    : "border-line bg-cream hover:border-ink/30"
-                }`}
-              >
-                <input
-                  type="radio"
-                  name="size"
-                  className="sr-only"
-                  checked={sizeId === s.id}
-                  onChange={() => setSizeId(s.id)}
-                />
-                <span className="block font-display text-lg font-semibold text-ink">
-                  {s.label}
-                </span>
-                <span className="block text-sm text-ink-soft">
-                  {s.dimensions}
-                </span>
-                <span className="mt-2 block text-sm font-semibold text-terracotta">
-                  {formatUSD(s.price)}
-                </span>
-              </label>
-            ))}
+        <Fieldset legend="Portrait size">
+          <div className="rounded-xl border border-terracotta bg-terracotta/5 p-4 sm:max-w-xs">
+            <span className="block font-display text-lg font-semibold text-ink">
+              {sizeOptions[0].label}
+            </span>
+            <span className="mt-2 block text-sm font-semibold text-terracotta">
+              Starting at {formatUSD(sizeOptions[0].price)}
+            </span>
+            <span className="mt-1 block text-xs text-ink-soft">
+              Colored pencil on paper
+            </span>
           </div>
         </Fieldset>
 

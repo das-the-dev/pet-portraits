@@ -6,7 +6,7 @@
 */
 export const site = {
   // Your studio / brand name (shown in the header and footer).
-  name: "Placeholder Name",
+  name: "Hadassah's Pet Portraits",
 
   // One-line description of what you do.
   tagline: "Realistic, hand-drawn portraits of the pets you love.",
@@ -20,7 +20,7 @@ export const site = {
 
   // Optional social links (leave a value empty "" to hide it).
   social: {
-    instagram: "https://instagram.com/yourhandle",
+    instagram: "https://instagram.com/hadassahpetportraits",
     facebook: "",
     tiktok: "",
   },

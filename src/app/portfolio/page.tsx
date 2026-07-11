@@ -38,7 +38,7 @@ export default function PortfolioPage() {
 
       <section className="pb-16 pt-10 sm:pb-20 sm:pt-12 lg:pb-24">
         <div className={container}>
-          <div className="grid grid-cols-2 gap-3.5 sm:gap-5 lg:grid-cols-3 lg:gap-6">
+          <div className="grid grid-cols-2 gap-x-5 gap-y-8 sm:gap-x-7 sm:gap-y-10 lg:grid-cols-3 lg:gap-x-8 lg:gap-y-12">
             {portfolio.map((portrait) => (
               <Reveal key={portrait.id}>
                 <PortraitCard portrait={portrait} />
