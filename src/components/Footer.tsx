@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
+import { BrandMark } from "@/components/BrandMark";
 
 function InstagramIcon({ size = 20 }: { size?: number }) {
   return (
@@ -47,9 +48,7 @@ export function Footer() {
       <div className="mx-auto w-full max-w-6xl px-7 py-10 sm:px-8 sm:py-12">
         <div className="flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
           <div className="max-w-sm">
-            <div className="font-display text-2xl font-semibold text-ink">
-              {site.name}
-            </div>
+            <BrandMark size="footer" />
             <p className="mt-3 text-sm leading-relaxed text-ink-soft">
               {site.tagline}
             </p>

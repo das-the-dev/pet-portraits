@@ -6,7 +6,7 @@
 */
 export const site = {
   // Your studio / brand name (shown in the header and footer).
-  name: "Hadassah's Pet Portraits",
+  name: "Pet Portraits by Hadassah",
 
   // One-line description of what you do.
   tagline: "Realistic, hand-drawn portraits of the pets you love.",

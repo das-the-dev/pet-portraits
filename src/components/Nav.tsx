@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { Menu, X } from "lucide-react";
-import { site } from "@/lib/site";
+import { BrandMark } from "@/components/BrandMark";
 
 const links = [
   { href: "/", label: "Home" },
@@ -32,10 +32,11 @@ export function Nav() {
       <nav className="mx-auto flex w-full max-w-6xl items-center justify-between px-7 py-4 sm:px-8 sm:py-5">
         <Link
           href="/"
-          className="font-display text-xl font-semibold tracking-tight text-ink"
+          className="text-ink"
+          aria-label="Pet Portraits by Hadassah — Home"
           onClick={() => setOpen(false)}
         >
-          {site.name}
+          <BrandMark />
         </Link>
 
         <div className="hidden items-center gap-8 md:flex">
