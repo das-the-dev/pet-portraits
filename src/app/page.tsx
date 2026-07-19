@@ -46,17 +46,17 @@ export default function HomePage() {
                 href="/commission"
                 className="inline-flex items-center justify-center gap-2 rounded-full bg-terracotta px-6 py-3 text-sm font-semibold text-cream transition-colors hover:bg-terracotta-bright"
               >
-                Request a Portrait <ArrowRight size={16} />
+                Commission a Portrait <ArrowRight size={16} />
               </Link>
               <Link
                 href="/portfolio"
                 className="inline-flex items-center justify-center gap-2 rounded-full border border-ink/20 px-6 py-3 text-sm font-semibold text-ink transition-colors hover:border-ink/40"
               >
-                View the Gallery
+                View Examples
               </Link>
             </div>
             <p className="mt-5 text-sm text-ink-soft">
-              8&quot; × 10&quot; portraits from{" "}
+              8&quot; × 10&quot; portraits{" "}
               <span className="font-semibold text-ink">
                 {formatUSD(startingPrice)}
               </span>
@@ -124,7 +124,7 @@ export default function HomePage() {
               href="/portfolio"
               className="hidden shrink-0 items-center gap-2 pb-1 text-sm font-semibold text-ink hover:text-terracotta sm:inline-flex"
             >
-              See all <ArrowRight size={16} />
+              See all examples <ArrowRight size={16} />
             </Link>
           </Reveal>
 
@@ -141,7 +141,7 @@ export default function HomePage() {
               href="/portfolio"
               className="inline-flex items-center gap-2 text-sm font-semibold text-ink"
             >
-              See all portraits <ArrowRight size={16} />
+              See all examples <ArrowRight size={16} />
             </Link>
           </div>
         </div>
@@ -189,7 +189,8 @@ export default function HomePage() {
                   alt={`${site.artistName}, pet portrait artist`}
                   fill
                   sizes="(max-width: 768px) 100vw, 50vw"
-                  className="object-cover object-center"
+                  className="object-cover"
+                  style={{ objectPosition: "50% 20%" }}
                 />
               ) : (
                 <div className="flex h-full items-center justify-center bg-gradient-to-br from-cream-dark to-[#efe4e8]">

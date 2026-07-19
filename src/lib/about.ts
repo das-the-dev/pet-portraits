@@ -19,5 +19,14 @@ export function getArtistPhoto(): string | undefined {
     .sort()[0];
 
   if (!image) return undefined;
-  return `/about/${encodeURIComponent(image)}`;
+
+  // Bust browser / Next image cache when you replace the photo
+  let version = "0";
+  try {
+    version = String(Math.floor(fs.statSync(path.join(ABOUT_DIR, image)).mtimeMs));
+  } catch {
+    /* ignore */
+  }
+
+  return `/about/${encodeURIComponent(image)}?v=${version}`;
 }

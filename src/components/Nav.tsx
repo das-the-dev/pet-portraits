@@ -7,8 +7,7 @@ import { site } from "@/lib/site";
 
 const links = [
   { href: "/", label: "Home" },
-  { href: "/portfolio", label: "Portfolio" },
-  { href: "/commission", label: "Commission" },
+  { href: "/portfolio", label: "Examples" },
 ];
 
 export function Nav() {
@@ -53,7 +52,7 @@ export function Nav() {
             href="/commission"
             className="rounded-full bg-terracotta px-5 py-2 text-sm font-semibold text-cream transition-colors hover:bg-terracotta-bright"
           >
-            Request a Portrait
+            Commission a Portrait
           </Link>
         </div>
 
@@ -84,7 +83,7 @@ export function Nav() {
               className="rounded-full bg-terracotta px-5 py-2 text-center text-sm font-semibold text-cream"
               onClick={() => setOpen(false)}
             >
-              Request a Portrait
+              Commission a Portrait
             </Link>
           </div>
         </div>

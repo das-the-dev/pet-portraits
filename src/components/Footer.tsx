@@ -57,10 +57,10 @@ export function Footer() {
 
           <div className="flex flex-col gap-3 text-sm">
             <Link href="/portfolio" className="text-ink-soft hover:text-ink">
-              Portfolio
+              Examples
             </Link>
             <Link href="/commission" className="text-ink-soft hover:text-ink">
-              Request a Commission
+              Commission a Portrait
             </Link>
             <a
               href={`mailto:${site.email}`}
