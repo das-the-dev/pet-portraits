@@ -105,20 +105,6 @@ export function CommissionForm() {
       className="grid gap-8 lg:grid-cols-[1.55fr_1fr] lg:gap-14 xl:gap-16"
     >
       <div className="space-y-8 sm:space-y-9">
-        <Fieldset legend="Portrait size">
-          <div className="rounded-xl border border-terracotta bg-terracotta/5 p-4 sm:max-w-xs">
-            <span className="block font-display text-lg font-semibold text-ink">
-              {sizeOptions[0].label}
-            </span>
-            <span className="mt-2 block text-sm font-semibold text-terracotta">
-              Starting at {formatUSD(sizeOptions[0].price)}
-            </span>
-            <span className="mt-1 block text-xs text-ink-soft">
-              Colored pencil on paper
-            </span>
-          </div>
-        </Fieldset>
-
         <Fieldset legend="How many pets in the portrait?">
           <div className="flex items-center gap-4">
             <Stepper value={petCount} onChange={setPetCount} min={1} max={maxPets} />
@@ -240,7 +226,10 @@ export function CommissionForm() {
             Your estimate
           </h3>
           <dl className="mt-5 space-y-3 text-sm">
-            <Row label="Base portrait" value={formatUSD(quote.base)} />
+            <Row
+              label={`${sizeOptions[0].dimensions} portrait`}
+              value={formatUSD(quote.base)}
+            />
             {quote.additionalPets > 0 && (
               <Row
                 label="Additional pets"

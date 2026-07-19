@@ -56,7 +56,7 @@ export default function HomePage() {
               </Link>
             </div>
             <p className="mt-5 text-sm text-ink-soft">
-              Portraits from{" "}
+              8&quot; × 10&quot; portraits from{" "}
               <span className="font-semibold text-ink">
                 {formatUSD(startingPrice)}
               </span>
