@@ -20,7 +20,7 @@ export const site = {
 
   // Optional social links (leave a value empty "" to hide it).
   social: {
-    instagram: "https://instagram.com/hadassahpetportraits",
+    instagram: "https://www.instagram.com/hadassahspetportraits/",
     facebook: "",
     tiktok: "",
   },

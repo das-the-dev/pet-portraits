@@ -74,6 +74,8 @@ export function Footer() {
             {site.social.instagram && (
               <a
                 href={site.social.instagram}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Instagram"
                 className="text-ink-soft transition-colors hover:text-terracotta"
               >
@@ -83,6 +85,8 @@ export function Footer() {
             {site.social.facebook && (
               <a
                 href={site.social.facebook}
+                target="_blank"
+                rel="noopener noreferrer"
                 aria-label="Facebook"
                 className="text-ink-soft transition-colors hover:text-terracotta"
               >
