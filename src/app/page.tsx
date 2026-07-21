@@ -84,7 +84,7 @@ export default function HomePage() {
               {
                 icon: Heart,
                 title: "I bring them to life",
-                body: "I carefully draw your portrait in colored pencil on Stonehenge aqua coldpress aluminum black panels, taking the time to capture every detail.",
+                body: "I carefully draw your portrait in colored pencil on a Stonehenge aqua black aluminum panel, taking the time to capture every detail.",
               },
               {
                 icon: CheckCircle2,
