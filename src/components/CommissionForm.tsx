@@ -14,9 +14,12 @@ import {
 const CLOUDINARY_CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_PRESET = process.env.NEXT_PUBLIC_CLOUDINARY_UPLOAD_PRESET;
 
+type SignaturePlacement = "front" | "back" | "none";
+
 export function CommissionForm() {
   const sizeId = sizeOptions[0].id;
   const [petCount, setPetCount] = useState(1);
+  const [signature, setSignature] = useState<SignaturePlacement>("none");
   const [memorial, setMemorial] = useState(false);
   const [notes, setNotes] = useState("");
   const [photo, setPhoto] = useState<File | null>(null);
@@ -74,6 +77,7 @@ export function CommissionForm() {
         body: JSON.stringify({
           sizeId,
           petCount,
+          signature,
           memorial,
           notes,
           photoUrl,
@@ -87,7 +91,7 @@ export function CommissionForm() {
       }
       if (data.configured === false) {
         setError(
-          "Online payment isn't set up yet. Please check back soon, or email me directly to place an order.",
+          "Online payment isn't set up yet. Please check back soon, or reach out on Instagram to place an order.",
         );
         return;
       }
@@ -117,6 +121,36 @@ export function CommissionForm() {
           <p className="mt-2 text-xs text-ink-soft">
             Up to {maxPets} pets in a single portrait.
           </p>
+        </Fieldset>
+
+        <Fieldset legend="Signature">
+          <div className="flex flex-wrap gap-2.5">
+            {(
+              [
+                { id: "none" as const, label: "None" },
+                { id: "front" as const, label: "Front" },
+                { id: "back" as const, label: "Back" },
+              ] as const
+            ).map((option) => (
+              <label
+                key={option.id}
+                className={`cursor-pointer rounded-full border px-5 py-2 text-sm font-medium transition-colors ${
+                  signature === option.id
+                    ? "border-terracotta bg-terracotta/10 text-ink"
+                    : "border-line bg-cream text-ink-soft hover:border-ink/30 hover:text-ink"
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="signature"
+                  className="sr-only"
+                  checked={signature === option.id}
+                  onChange={() => setSignature(option.id)}
+                />
+                {option.label}
+              </label>
+            ))}
+          </div>
         </Fieldset>
 
         <Fieldset legend="Your pet's photo">
@@ -236,6 +270,16 @@ export function CommissionForm() {
                 value={formatUSD(quote.additionalPets)}
               />
             )}
+            <Row
+              label="Signature"
+              value={
+                signature === "front"
+                  ? "Front"
+                  : signature === "back"
+                    ? "Back"
+                    : "None"
+              }
+            />
             {quote.discount > 0 && (
               <Row
                 label={`Memorial discount (${memorialDiscountPercent}%)`}

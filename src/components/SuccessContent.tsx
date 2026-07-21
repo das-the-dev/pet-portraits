@@ -46,6 +46,7 @@ export function SuccessContent() {
           shippingAddress: data.shippingAddress,
           size: data.size,
           petCount: data.petCount,
+          signature: data.signature ?? "None",
           memorial: data.memorial,
           total: data.total,
           notes: data.notes,

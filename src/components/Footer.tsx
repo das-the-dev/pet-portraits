@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { Mail } from "lucide-react";
 import { site } from "@/lib/site";
 import { BrandMark } from "@/components/BrandMark";
 
@@ -61,12 +60,9 @@ export function Footer() {
             <Link href="/commission" className="text-ink-soft hover:text-ink">
               Commission a Portrait
             </Link>
-            <a
-              href={`mailto:${site.email}`}
-              className="text-ink-soft hover:text-ink"
-            >
-              {site.email}
-            </a>
+            <Link href="/contact" className="text-ink-soft hover:text-ink">
+              Contact
+            </Link>
           </div>
 
           <div className="flex gap-4">
@@ -92,13 +88,6 @@ export function Footer() {
                 <FacebookIcon size={20} />
               </a>
             )}
-            <a
-              href={`mailto:${site.email}`}
-              aria-label="Email"
-              className="text-ink-soft transition-colors hover:text-terracotta"
-            >
-              <Mail size={20} />
-            </a>
           </div>
         </div>
 

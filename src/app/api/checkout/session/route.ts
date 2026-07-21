@@ -45,6 +45,12 @@ export async function GET(req: Request) {
       ),
       size: size ? `${size.label} (${size.dimensions})` : md.sizeId ?? "—",
       petCount: Number(md.petCount) || 1,
+      signature:
+        md.signature === "front"
+          ? "Front"
+          : md.signature === "back"
+            ? "Back"
+            : "None",
       memorial: md.memorial === "yes",
       total: md.total ?? "—",
       notes: md.notes ?? "",

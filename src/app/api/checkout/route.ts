@@ -22,6 +22,9 @@ export async function POST(req: Request) {
 
   const sizeId = String(body.sizeId ?? "");
   const petCount = Math.max(1, Math.min(maxPets, Number(body.petCount) || 1));
+  const signatureRaw = String(body.signature ?? "none");
+  const signature =
+    signatureRaw === "front" || signatureRaw === "back" ? signatureRaw : "none";
   const memorial = Boolean(body.memorial);
   const notes = String(body.notes ?? "").slice(0, 480);
   const photoUrl = String(body.photoUrl ?? "").slice(0, 480);
@@ -61,7 +64,7 @@ export async function POST(req: Request) {
             unit_amount: quote.depositDue * 100,
             product_data: {
               name: `Custom pet portrait — ${size.label} (${size.dimensions})`,
-              description: `${petCount} pet${petCount > 1 ? "s" : ""} · Colored pencil${
+              description: `${petCount} pet${petCount > 1 ? "s" : ""} · Colored pencil · signature: ${signature}${
                 memorial ? " · memorial discount applied" : ""
               }`,
             },
@@ -71,6 +74,7 @@ export async function POST(req: Request) {
       metadata: {
         sizeId,
         petCount: String(petCount),
+        signature,
         memorial: memorial ? "yes" : "no",
         total: formatUSD(quote.total),
         notes,

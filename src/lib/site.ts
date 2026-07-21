@@ -15,7 +15,7 @@ export const site = {
   intro:
     "I create detailed, lifelike colored pencil portraits that capture the soul and personality of your pet.",
 
-  // Where commission enquiries and messages should reach you.
+  // Kept private — not shown on the website. Order emails use Web3Forms.
   email: "hadassahdavis@icloud.com",
 
   // Optional social links (leave a value empty "" to hide it).

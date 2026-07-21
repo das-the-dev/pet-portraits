@@ -10,6 +10,7 @@ export type CommissionNotification = {
   shippingAddress: string;
   size: string;
   petCount: number;
+  signature: string;
   memorial: boolean;
   total: string;
   notes: string;
@@ -32,6 +33,7 @@ export async function sendCommissionNotification(
   fd.append("Shipping address", data.shippingAddress);
   fd.append("Size", data.size);
   fd.append("Number of pets", String(data.petCount));
+  fd.append("Signature", data.signature);
   fd.append("Medium", MEDIUM);
   fd.append(
     "Memorial",
