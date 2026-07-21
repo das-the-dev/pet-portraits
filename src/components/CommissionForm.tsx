@@ -230,7 +230,6 @@ export function CommissionForm() {
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
             rows={4}
-            placeholder="e.g. This is for my dog Bailey — I'd love a soft, warm expression…"
             className="w-full rounded-xl border border-line bg-cream px-4 py-3 text-ink outline-none transition-colors placeholder:text-ink-soft/60 focus:border-terracotta"
           />
         </Fieldset>
