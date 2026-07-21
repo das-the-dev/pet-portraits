@@ -50,6 +50,7 @@ export async function POST(req: Request) {
   try {
     const session = await stripe.checkout.sessions.create({
       mode: "payment",
+      payment_method_types: ["card"],
       shipping_address_collection: {
         allowed_countries: ["US"],
       },
