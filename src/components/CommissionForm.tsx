@@ -223,8 +223,8 @@ export function CommissionForm() {
 
         <Fieldset legend="Notes">
           <label className="mb-1.5 block text-sm text-ink-soft">
-            Pet names, special requests, framing ideas, deadlines, or anything
-            else I should know.
+            Pet names, special requests, deadlines, or anything else I should
+            know.
           </label>
           <textarea
             value={notes}
