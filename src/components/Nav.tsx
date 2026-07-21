@@ -8,7 +8,6 @@ import { BrandMark } from "@/components/BrandMark";
 const links = [
   { href: "/", label: "Home" },
   { href: "/portfolio", label: "Examples" },
-  { href: "/contact", label: "Contact" },
 ];
 
 export function Nav() {
