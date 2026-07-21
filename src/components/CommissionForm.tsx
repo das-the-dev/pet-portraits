@@ -119,7 +119,8 @@ export function CommissionForm() {
             </span>
           </div>
           <p className="mt-2 text-xs text-ink-soft">
-            Up to {maxPets} pets in a single portrait.
+            Up to {maxPets} pets in a single portrait. Each additional pet is{" "}
+            {formatUSD(additionalPetPrice)}.
           </p>
         </Fieldset>
 

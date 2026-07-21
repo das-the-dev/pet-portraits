@@ -13,15 +13,16 @@ export type SizeOption = {
 };
 
 // Base price for a single-pet portrait at each size.
+// Price includes US shipping (materials, packaging, and postage).
 export const sizeOptions: SizeOption[] = [
-  { id: "small", label: '8" × 10"', dimensions: '8" × 10"', price: 150 },
+  { id: "small", label: '8" × 10"', dimensions: '8" × 10"', price: 200 },
 ];
 
 // The most pets you'll draw together in one portrait.
 export const maxPets = 3;
 
 // Added for each pet beyond the first in the same portrait.
-export const additionalPetPrice = 60;
+export const additionalPetPrice = 75;
 
 // Memorial / "death in the family" discount, as a percentage off (0–100).
 export const memorialDiscountPercent = 15;
