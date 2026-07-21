@@ -88,9 +88,10 @@ export async function POST(req: Request) {
     return NextResponse.json({ configured: true, url: session.url });
   } catch (err) {
     console.error("Stripe error:", err);
-    return NextResponse.json(
-      { error: "Could not start checkout. Please try again." },
-      { status: 500 },
-    );
+    const message =
+      err instanceof Stripe.errors.StripeError
+        ? err.message
+        : "Could not start checkout. Please try again.";
+    return NextResponse.json({ error: message }, { status: 500 });
   }
 }
