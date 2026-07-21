@@ -21,7 +21,7 @@ export default function CommissionPage() {
           </h1>
           <p className="mt-4 text-base leading-relaxed text-ink-soft sm:mt-6 sm:text-lg">
             Each portrait is an 8&quot; × 10&quot; colored pencil drawing on
-            Stonehenge Aqua coldpress aluminum black panels for{" "}
+            Stonehenge aqua coldpress aluminum black panels for{" "}
             {formatUSD(sizeOptions[0].price)}, including US shipping. Choose your
             options below and you&rsquo;ll see your estimate. On the next page,
             we&rsquo;ll securely collect your contact info, shipping address, and
