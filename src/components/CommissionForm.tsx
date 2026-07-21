@@ -9,6 +9,7 @@ import {
   memorialDiscountPercent,
   depositFraction,
   maxPets,
+  additionalPetPrice,
 } from "@/lib/pricing";
 
 const CLOUDINARY_CLOUD = process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME;
