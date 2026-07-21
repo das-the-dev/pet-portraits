@@ -272,16 +272,6 @@ export function CommissionForm() {
                 value={formatUSD(quote.additionalPets)}
               />
             )}
-            <Row
-              label="Signature"
-              value={
-                signature === "front"
-                  ? "Front"
-                  : signature === "back"
-                    ? "Back"
-                    : "None"
-              }
-            />
             {quote.discount > 0 && (
               <Row
                 label={`Memorial discount (${memorialDiscountPercent}%)`}
